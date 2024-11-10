@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #080202;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Padding lateral */
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo-1, .logo-2 {
+    width: 150px; /* Tamaño del logo */
+}
+
+.menu-icono {
+    width: 25px; /* Ajusta según sea necesario */
+}
+
+.navbar {
+    display: block;
+    align-items: center;
+}
+
+.menu-1 {
+    display: flex;
+}
+
+.menu-1 ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-1 li {
+    list-style: none;
+}
+
+.menu-1 a {
+    color: #ffffff;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu-1 a:hover {
+    color: #db241b;
+}
+
+
+/* Estilos para hacer el menú responsivo */
+#menu {
+    display: none; /* Mantener oculto el checkbox */
+}
+
+.menu label {
+    display: none; /* Ocultar por defecto */
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinear a la izquierda */
+    }
+
+    .menu label {
+        display: block; /* Mostrar el botón de menú */
+    }
+
+    .menu-1 {
+        display: none; /* Ocultar el menú por defecto */
+    }
+
+    #menu:checked + label + .navbar .menu-1 {
+        display: flex; /* Mostrar el menú cuando se verifica el checkbox */
+        flex-direction: column; /* Cambiar a columna */
+        width: 100%; /* Ancho completo */
+    }
+
+    .navbar {
+        flex-direction: column; /* Cambiar dirección en mobile */
+        width: 100%; /* Asegurarse de que ocupa el ancho completo */
+    }
+
+    .slider-txt h1 {
+        font-size: 1.8em; /* Tamaño más pequeño en pantallas pequeñas */
+    }
+
+    .slider-txt p {
+        font-size: 1em; /* Tamaño de texto más pequeño */
+    }
+}
+
+@media (max-width: 576px) {
+    .menu a {
+        padding: 10px 15px; /* Ajustar el padding en mobile */
+    }
+
+    .slider-txt h1 {
+        font-size: 1.5em; /* Ajustar tamaño de fuente */
+    }
+
+    .slider-txt p {
+        font-size: 0.9em; /* Ajustar tamaño de fuente */
+    }
+}
+
+
+.botones {
+    margin-top: 50px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 2px solid #db241b;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    border-radius: 50px;
+}
+
+.btn-1:hover {
+    background-color: #db241b;
+}
+
+.slider-img img {
+    width: 350px;
+    margin-left: 100px;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px 0;
+}
+
+.tabs label {
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    cursor: pointer;
+    color: #a7a7a7;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: background ease 0.2s;
+}
+
+.tabs .tab {
+    display: none;
+    padding-top: 25px;
+}
+
+.tabs input[type="radio"] {
+    display: none;
+}
+
+.tabs input[type="radio"]:checked + label {
+    border-bottom: 2px solid #db241b;
+    color: #ffffff;
+}
+
+.tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    margin: 0 10px;
+}
+
+.product-img h4 {
+    padding: 5px 7px;
+    line-height: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: 2px solid #555555;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.product-img img {
+    width: 150px;
+    height: 120px;
+}
+
+.product-txt {
+    width: 50%;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.product-txt h4 {
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.product-txt p {
+    color: #a7a7a7;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.product-txt span {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.info {
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+}
+
+.info-img {
+    width: 50%;
+}
+
+.info-img img {
+    width: 500px;
+    height: 250px;
+}
+
+.info-txt {
+    width: 50%;
+}
+
+.info-txt h2 {
+    font-size: 75px;
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.info-txt p {
+    font-size: 18px;
+    color: #a7a7a7;
+    margin-bottom: 50px;
+}
+
+.btn-2 {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #db241b;
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+
+.btn-2:hover {
+    background-color: #b81d15;
+}
+
+.horario {
+    padding: 5% 0; /* Cambiar a porcentaje para hacer el padding más responsivo */
+    background-color: #0d0d0d;
+    width: 100%; /* Asegúrate de que ocupe el 100% del ancho */
+}
+
+.horario-info h2 {
+    font-size: 6vw; /* Utiliza unidades de viewport para tamaño de fuente responsivo */
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 3%; /* Cambiar a porcentaje para el margen inferior */
+}
+
+.horario-txt {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+}
+
+.horario-txt > div { /* Suponiendo que tienes divs dentro de .horario-txt */
+    flex: 1 1 30%; /* Los elementos tienen un tamaño base de 30% */
+    margin: 10px; /* Espaciado entre elementos */
+}
+
+@media (max-width: 768px) {
+    .horario-txt {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Alinear los elementos al centro */
+    }
+
+    .horario-info h2 {
+        font-size: 8vw; /* Ajustar el tamaño de la fuente a unidades de viewport */
+    }
+
+    .horario-txt > div {
+        width: 100%; /* Los elementos ocuparán el ancho completo */
+        margin: 5px 0; /* Espaciado vertical entre elementos */
+    }
+
+    .slider-txt {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .slider-txt h1 {
+        font-size: 40px;
+    }
+
+    .slider-txt p {
+        font-size: 16px;
+    }
+
+    .slider-img {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .horario-info h2 {
+        font-size: 10vw; /* Ajuste adicional para pantallas muy pequeñas */
+    }
+
+    .menu {
+        padding: 20px;
+        justify-content: space-between;
+    }
+
+    .menu label {
+        display: block; /* Mostrar en mobile */
+    }
+
+    .menu .navbar ul {
+        flex-direction: column; /* Cambiar a columna */
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    .menu .navbar ul li a {
+        font-size: 30px; /* Aumentar tamaño de texto */
+        padding: 15px; /* Ajustar padding */
+    }
+
+    .header-content {
+        padding: 50px;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+        flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+        margin: 0 auto; /* Centra el contenedor si tiene un ancho fijo */
+    }
+    
+    .products {
+        display: flex; /* Usa flexbox para el contenedor de productos */
+        justify-content: center; /* Centra horizontalmente los productos */
+        flex-wrap: wrap; /* Permite que los productos se envuelvan si no hay espacio suficiente */
+        margin: 20px auto; /* Espaciado superior e inferior y centrar el contenedor */
+    }
+    @media (max-width: 768px) {
+        .products {
+            flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+            align-items: center; /* Asegura que todos los elementos estén centrados */
+        }
+    }
+
+    .image-container {
+        display: flex; /* Usar flexbox para centrar */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente (opcional, si el contenedor tiene altura) */
+        margin: 20px 0; /* Espacio alrededor del contenedor */
+    }
+    
+    .image-container img {
+        max-width: 100%; /* Asegura que la imagen no se desborde */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+    
+    
+
+    .img-grid {
+        display: flex; /* Usa flexbox para el contenedor de la imagen */
+        justify-content: center; /* Centra horizontalmente la imagen */
+        align-items: center; /* Centra verticalmente la imagen */
+        flex-direction: column; /* Asegura que la imagen y el texto se alineen verticalmente */
+        text-align: center; /* Centra el texto debajo de la imagen */
+        margin: 10px; /* Margen entre productos */
+    }
+    
+    .product {
+        display: flex; /* Usar flexbox para cada producto */
+        align-items: center; /* Alinea verticalmente el contenido */
+        justify-content: center; /* Centra horizontalmente el contenido */
+        margin: 10px; /* Espacio entre productos */
+    }
+    
+    .tab {
+        display: flex;
+        flex-direction: column; /* Alinea los elementos verticalmente */
+        align-items: center; /* Centra horizontalmente */
+        width: 100%; /* Asegura que ocupen todo el ancho disponible */
+    }
+    
+    .tab img {
+        max-width: 100%; /* Asegura que las imágenes no desborden su contenedor */
+        height: auto; /* Mantiene la relación de aspecto de la imagen */
+    }
+    
+
+  
+.product-txt {
+    text-align: center; /* Asegura que el texto del producto esté centrado */
+}
+
+    .info {
+        flex-direction: column; /* Cambiar dirección en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .info-img, .info-txt {
+        width: 100%; /* Asegura que ocupen el ancho completo */
+        text-align: center; /* Centra el texto */
+    }
+
+    .info-img img {
+        width: 100%; /* Imágenes se ajustan al 100% */
+        height: auto; /* Mantener relación de aspecto */
+    }
+}
+
+.txt {
+    color: #ffffff;
+}
+
+.txt h4 {
+    font-size: 18px;
+    color: #a7a7a7;
+    margin-bottom: 30px;
+}
+
+.txt p {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw; /* Ancho completo de la ventana */
+    height: 70vh; /* Altura completa de la ventana */
+    max-width: 100%; /* Asegura que no exceda el ancho de la pantalla */
+}
+
+.map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    aspect-ratio: 16 / 9; /* Mantener relación de aspecto */
+}
+
+.footer {
+    padding: 100px 0;
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: space-between;
+}
+
+.link h4 {
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.link ul li a {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+@media (max-width: 576px) {
+    .footer {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        text-align: center; /* Centra el texto */
+    }
+
+    .link ul li {
+        margin: 5px 0; /* Espaciado vertical */
+    }
+}
+.nosotros {
+    padding: 40px 20px; /* Espaciado interno */
+    margin: 20px auto; /* Margen superior e inferior */
+    max-width: 800px; /* Ancho máximo de la sección */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    color: white; /* Color del texto */
+    text-align: center; /* Centramos el texto */
+}
+
+.nosotros h1 {
+    font-size: 2.5em; /* Tamaño de fuente del encabezado principal */
+    margin-bottom: 20px; /* Margen inferior */
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.nosotros p {
+    font-size: 1.2em; /* Tamaño de fuente del párrafo */
+    margin-bottom: 30px; /* Margen inferior */
+}
+
+.nosotros article {
+    margin: 20px 0; /* Margen superior e inferior para los artículos */
+    padding: 20px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente blanco */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.nosotros article h2 {
+    font-size: 1.8em; /* Tamaño de fuente de los encabezados de los artículos */
+    margin-bottom: 10px; /* Margen inferior */
+    color: #db241b; /* Color para los encabezados de los artículos */
+}
+
+.nosotros article p {
+    font-size: 1em; /* Tamaño de fuente del párrafo dentro del artículo */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .nosotros h1 {
+        font-size: 2em; /* Ajuste del tamaño de fuente para pantallas pequeñas */
+    }
+
+    .nosotros p,
+    .nosotros article p {
+        font-size: 1em; /* Ajuste de tamaño de fuente para párrafos */
+    }
+
+    .nosotros article {
+        padding: 15px; /* Menos espaciado interno en pantallas pequeñas */
+    }
+}
+

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Food Divcode - Comprar productos</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+      <link rel="stylesheet" href="style.css" />
+      <style>
+        /* Estilo para el carrito de compras */
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .cart h4 {
+            margin: 0;
+            font-size: 16px;
+        }
+        .cart-items {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+        .cart-items p {
+            margin: 5px 0;
+        }
+      </style>
+   </head>
+   <body>
+      <header>
+         <div class="menu container">
+            <img class="logo-1" src="images/logo.svg" alt="Logo de Food Divcode" />
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+               <img src="images/menu.png" class="menu-icono" alt="Menú" />
+            </label>
+            <nav class="navbar">
+               <div class="menu-1">
+                  <ul>
+                     <li><a href="index.html">Inicio</a></li>
+                     <li><a href="nosotros.html">Nosotros</a></li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+         <div class="header-content container">
+            <div class="swiper myswiper-1">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <div class="slider">
+                        <div class="slider-txt">
+                           <h1>Hamburguesa</h1>
+                           <p>Las mejores Hamburguesas de la ciudad.. ven a probarlas</p>
+                        </div>
+                        <div class="slider-img">
+                           <img src="images/slider1.png" alt="Hamburguesa" />
+                           <img src="images/slider2.png" alt="Otra Hamburguesa" />
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="slider">
+                        <div class="slider-txt">
+                           <h1>Tacos y Burritos</h1>
+                           <p>Los mejores burritos y tacos te esperan</p>
+                        </div>
+                        <div class="slider-img">
+                           <img src="images/slider2.png" alt="Tacos y Burritos" />
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="slider">
+                        <div class="slider-txt">
+                           <h1>Hamburguesa grande</h1>
+                           <p>Mega Hamburguesas que van a dejarte satisfecho.!!</p>
+                        </div>
+                        <div class="slider-img">
+                           <img src="images/slider3.png" alt="Hamburguesa grande" />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-button-next"></div>
+               <div class="swiper-button-prev"></div>
+               <div class="swiper-pagination"></div>
+            </div>
+         </div>
+      </header>
+      
+      <main class="nosotros">
+         <div class="products-container">
+            <h4>Hamburguesas</h4>
+            <!-- Producto 1 -->
+            <div class="product">
+               <div class="image-container">
+                  <img src="images/food1.png" alt="Hamburguesa" />
+               </div>
+               <div class="product-txt">
+                  <h4>Hamburguesa Premium</h4>
+                  <p>Calidad Premium</p>
+                  <span class="price">$1600</span>
+                  <button class="add-to-cart" data-id="1" data-name="Hamburguesa Premium" data-price="1600">Agregar al carrito</button>
+               </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product">
+               <div class="image-container">
+                  <img src="images/food2.png" alt="Super Combo" />
+               </div>
+               <div class="product-txt">
+                  <h4>Super Combo</h4>
+                  <p>Calidad Premium</p>
+                  <span class="price">$2500</span>
+                  <button class="add-to-cart" data-id="2" data-name="Super Combo" data-price="2500">Agregar al carrito</button>
+               </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product">
+               <div class="image-container">
+                  <img src="images/food3.png" alt="Combo 3" />
+               </div>
+               <div class="product-txt">
+                  <h4>Combo 3</h4>
+                  <p>Solo la mejor</p>
+                  <span class="price">$600</span>
+                  <button class="add-to-cart" data-id="3" data-name="Combo 3" data-price="600">Agregar al carrito</button>
+               </div>
+            </div>
+         </div>
+      </main>
+      
+      <!-- Carrito de compras -->
+      <div class="cart">
+         <h4>Carrito</h4>
+         <div class="cart-items">
+            <!-- Los productos añadidos al carrito aparecerán aquí -->
+         </div>
+         <button class="checkout-btn">Proceder a la compra</button>
+      </div>
+
+      <footer class="footer conteiner">
+         <img class="logo-2" src="images/logo.svg" alt="" />
+         <div class="links">
+            <h4>lorem</h4>
+            <div class="socials">
+               <a href="#"><div class="social"><img src="images/s1.svg" alt="" /></div></a>
+               <a href="#"><div class="social"><img src="images/s2.svg" alt="" /></div></a>
+               <a href="#"><div class="social"><img src="images/s3.svg" alt="" /></div></a>
+            </div>
+         </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+         // Carrito de compras
+         const cartItems = document.querySelector('.cart-items');
+         const checkoutBtn = document.querySelector('.checkout-btn');
+         const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+         let cart = [];
+
+         addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+    const name = button.getAttribute('data-name');
+    const price = button.getAttribute('data-price');
+    const product_id = button.getAttribute('data-id');
+    const quantity = 1; // Esto puedes cambiarlo más tarde para que sea dinámico
+
+    // Buscar si el producto ya existe en el carrito y aumentar la cantidad
+    const existingItem = cart.find(item => item.product_id === product_id);
+    if (existingItem) {
+        existingItem.quantity += 1; // Si ya está en el carrito, aumentamos la cantidad
+    } else {
+        cart.push({ product_id, name, price, quantity });  // Si no está, lo añadimos
+    }
+
+    updateCart();
+});
+
+         });
+
+         // Función para actualizar el contenido del carrito
+         function updateCart() {
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const itemElement = document.createElement('p');
+                itemElement.textContent = `${item.name} - $${item.price}`;
+                cartItems.appendChild(itemElement);
+            });
+         }
+         checkoutBtn.addEventListener('click', () => {
+    if (cart.length > 0) {
+        // Verifica el contenido del carrito antes de enviarlo
+        console.log('Contenido del carrito:', cart);
+
+        fetch('checkout.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cart)  // Asegúrate de enviar el carrito correctamente
+        })
+        .then(response => response.text())  // Cambia de response.json() a response.text()
+        .then(data => {
+            console.log('Respuesta del servidor (texto):', data);  // Imprime la respuesta completa en texto
+
+            try {
+                // Intenta convertir la respuesta en JSON si es posible
+                const jsonData = JSON.parse(data);
+                if (jsonData.status === 'success') {
+                    alert('Compra realizada con éxito! Total: $' + jsonData.total);
+                    cart = [];  // Limpiar carrito después de la compra
+                    updateCart();  // Actualizar la interfaz del carrito
+                    window.location.href = "thankyou.html";  // Redirigir a página de "Gracias"
+                } else {
+                    alert('Hubo un problema con tu compra: ' + jsonData.message);
+                }
+            } catch (e) {
+                // Si no es posible analizar la respuesta como JSON, muestra el error
+                console.error('Error al analizar la respuesta:', e);
+                alert('Hubo un problema al procesar la compra. Respuesta del servidor: ' + data);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al procesar tu compra. Por favor intenta de nuevo más tarde.');
+        });
+    } else {
+        alert('El carrito está vacío.');
+    }
+});
+
+      </script>
+   </body>
+</html>
